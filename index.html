@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue Task App</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+  crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="app" class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>タグ一覧</h3>
+      <ul v-for="tag in tagList">
+        <li>{{ tag }}</li>
+      </ul>
+    </div>
+    <div class="contents">
+      <h1>
+        <button @click="purge">Purge</button>
+        My Todos
+        <span class="info"> ({{ remaining.length }}/{{ todos.length }})</span>
+        <form @submit.prevent="addItem">
+          <label for="task_name">Title:</label><input type="input" name="task_name" v-model="newItem">
+          <label for="tag_name">Tag:</label><input type="input" name="tag_name" v-model="newTag">
+          <input type="submit" value="Add">
+        </form>
+      </h1>
+      <table>
+        <!-- <thead>
+          <th></th><th>title</th><th>tag</th>
+        </thead> -->
+        <tbody>
+          <tr class="task"　v-for="(todo, index) in todos">
+            <td class="task_isDone"><input type="checkbox" v-model="todo.isDone"></td>
+            <td class="task_title"><span :class="{done: todo.isDone}">{{ todo.title }}</span></td>
+            <td class="task_tag"><span :class="{done: todo.isDone}" class="task_tag_bg"><i class="fas fa-tag"></i> {{ todo.tag }}</span></td>
+            <td class="task_kill"><span @click="deleteItem(index)" class="command"> [x] </span></td>
+          </tr>
+        </tbody>
+        <!-- <li v-for="(todo, index) in todos">
+          <input type="checkbox" v-model="todo.isDone">
+          <span :class="{done: todo.isDone}">{{ todo.title }} {{ todo.tag }}</span>
+          <span @click="deleteItem(index)" class="command"> [x] </span>
+        </li> -->
+      </table>
+      <li v-show="!todos.length">Nothing to do.</li>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
