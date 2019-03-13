@@ -13,14 +13,14 @@
   <div id="app" class="container">
     <!-- Sidebar -->
     <div class="sidebar">
-      <h3>タグ一覧</h3>
+      <h3>Tag list</h3>
       <ul v-for="tag in tagList">
         <li>{{ tag }}</li>
       </ul>
     </div>
     <div class="contents">
       <h1>
-        <button @click="purge">Purge</button>
+        <button @click="purge">Clean up</button>
         My Todos
         <span class="info"> ({{ remaining.length }}/{{ todos.length }})</span>
         <form @submit.prevent="addItem">

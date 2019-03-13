@@ -31,7 +31,7 @@
         this.newTag = '';
       },
       deleteItem: function(index) {
-        if (confirm('are you sure?')) {
+        if (confirm('削除しますか?')) {
           this.todos.splice(index, 1);
         }
       },

@@ -18,15 +18,23 @@ body {
 
 /* sidebar */
 .sidebar {
+  color: white;
   width: 300px;
   background-color: #565264;
 }
 
+.sidebar h3 {
+  margin: 15px;
+}
 /* main content */
 .contents {
   flex: 1;
   max-width: 1024px;
-  margin: 0 100px;
+  /* margin: 0 100px; */
+}
+
+.contents h1 {
+  margin: 15px;
 }
 
 table {
