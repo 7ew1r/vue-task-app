@@ -12,14 +12,12 @@ body {
 .container {
   display: flex;
   height: 100vh;
-  /* width: 300px;
-  margin: auto; */
 }
 
 /* sidebar */
 .sidebar {
   color: white;
-  width: 300px;
+  width: 200px;
   background-color: #565264;
 }
 
@@ -30,7 +28,6 @@ body {
 .contents {
   flex: 1;
   max-width: 1024px;
-  /* margin: 0 100px; */
 }
 
 .contents h1 {
@@ -40,7 +37,6 @@ body {
 table {
   border-collapse: collapse;
   width: 100%;
-  /* background: blue; */
 }
 
 .task {
@@ -70,7 +66,6 @@ table {
 .task_tag_bg {
   padding: 3px 15px;
   background: #706677;
-  /* border: 5px; */
   border-radius: 20px;
 }
 
@@ -101,11 +96,6 @@ table {
   cursor: pointer;
   color: #08c;
 }
-
-/* #app ul {
-  padding: 0;
-  list-style: none;
-} */
 
 #app span.done {
   text-decoration: line-through;

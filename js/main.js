@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-  // two way data binding (to UI)
   var vm = new Vue({
     el: '#app',
     data: {
@@ -51,10 +50,11 @@
       tagList: function() {
         var tags = [];
         for(var todo in this.todos) {
-          console.log(this.todos[todo].tag);
           tags.push(this.todos[todo].tag)
         }
-        return tags;
+        return tags.filter(function (x, i, self) {
+          return self.indexOf(x) === i;
+        });
       }
     }
   });

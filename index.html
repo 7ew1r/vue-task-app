@@ -13,7 +13,7 @@
   <div id="app" class="container">
     <!-- Sidebar -->
     <div class="sidebar">
-      <h3>Tag list</h3>
+      <h3><i class="fas fa-tag"></i> Tag list</h3>
       <ul v-for="tag in tagList">
         <li>{{ tag }}</li>
       </ul>
@@ -30,22 +30,17 @@
         </form>
       </h1>
       <table>
-        <!-- <thead>
-          <th></th><th>title</th><th>tag</th>
-        </thead> -->
+        <thead>
+          <th></th><th>名前</th><th>タグ</th>
+        </thead>
         <tbody>
           <tr class="task"　v-for="(todo, index) in todos">
             <td class="task_isDone"><input type="checkbox" v-model="todo.isDone"></td>
             <td class="task_title"><span :class="{done: todo.isDone}">{{ todo.title }}</span></td>
-            <td class="task_tag"><span :class="{done: todo.isDone}" class="task_tag_bg"><i class="fas fa-tag"></i> {{ todo.tag }}</span></td>
+            <td class="task_tag"><span :class="{done: todo.isDone}" class="task_tag_bg">{{ todo.tag }}</span></td>
             <td class="task_kill"><span @click="deleteItem(index)" class="command"> [x] </span></td>
           </tr>
         </tbody>
-        <!-- <li v-for="(todo, index) in todos">
-          <input type="checkbox" v-model="todo.isDone">
-          <span :class="{done: todo.isDone}">{{ todo.title }} {{ todo.tag }}</span>
-          <span @click="deleteItem(index)" class="command"> [x] </span>
-        </li> -->
       </table>
       <li v-show="!todos.length">Nothing to do.</li>
     </div>
