@@ -89,6 +89,11 @@ table {
   width: 25px;
 }
 
+.n_t_d {
+  font-size: 20px;
+  text-align: center;
+}
+
 #app h1 {
   font-size: 16px;
   border-bottom: 1px solid #ddd;
