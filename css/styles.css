@@ -1,6 +1,7 @@
 /* common */
 
-body, html {
+body,
+html {
   margin: 0;
 }
 
@@ -24,6 +25,7 @@ body {
 .sidebar h3 {
   margin: 15px;
 }
+
 /* main content */
 .contents {
   flex: 1;
@@ -32,7 +34,17 @@ body {
 
 .contents h1 {
   margin: 15px;
+  line-height: 1.8rem;
 }
+
+form {
+  font-size: 16px;
+}
+
+.input_form {
+  width: 200px;
+}
+
 
 table {
   border-collapse: collapse;
@@ -108,6 +120,6 @@ table {
   font-weight: normal;
 }
 
-#app h1 > button {
+#app h1>button {
   float: right;
 }

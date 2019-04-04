@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Vue Task App</title>
+  <title>Task App</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,20 +21,22 @@
     <div class="contents">
       <h1>
         <button @click="purge">Clean up</button>
-        My Todos
+        Todos
         <span class="info"> ({{ remaining.length }}/{{ todos.length }})</span>
         <form @submit.prevent="addItem">
-          <label for="task_name">Title:</label><input type="input" name="task_name" v-model="newItem">
-          <label for="tag_name">Tag:</label><input type="input" name="tag_name" v-model="newTag">
-          <input type="submit" value="Add">
+          <label for="task_name">タスク名:</label><input type="input" name="task_name" v-model="newItem" class="input_form">
+          <label for="tag_name">タグ:</label><input type="input" name="tag_name" v-model="newTag">
+          <input type="submit" value="+">
         </form>
       </h1>
       <table>
         <thead>
-          <th></th><th>名前</th><th>タグ</th>
+          <th></th>
+          <th>名前</th>
+          <th>タグ</th>
         </thead>
         <tbody>
-          <tr class="task"　v-for="(todo, index) in todos">
+          <tr class="task" 　v-for="(todo, index) in todos">
             <td class="task_isDone"><input type="checkbox" v-model="todo.isDone"></td>
             <td class="task_title"><span :class="{done: todo.isDone}">{{ todo.title }}</span></td>
             <td class="task_tag"><span :class="{done: todo.isDone}" class="task_tag_bg">{{ todo.tag }}</span></td>
