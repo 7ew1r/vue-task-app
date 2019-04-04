@@ -1,3 +1,3 @@
 # vue-task-app
 
-My first task app for lieaning Vue.js
+My first task app for leaning Vue.js
